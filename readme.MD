@@ -37,7 +37,7 @@ To make the project more similar to real-life problems, I split it into small ta
 As the project progresses, I will add the time spent on each task. 
 
 1. Problem Selection & Setup: Choose a simple dataset, define objective, set up local environment. **44 minutes**
-2. Data Module: Load, clean and split datasets. **??? minutes**
+2. Data Module: Load, clean and split datasets. **36 + minutes**
 3. Feature Engineering Module: Transform raw data into model-ready features. **??? minutes**
 4. Feature Store Module: Store processed features making it easier to manage and serve models. **??? minutes**
 5. Unit testing Module: Test each feature from the feature store. **??? minutes**
