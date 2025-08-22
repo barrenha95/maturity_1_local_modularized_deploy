@@ -39,9 +39,9 @@ As the project progresses, I will add the time spent on each task.
 1. Problem Selection & Setup: Choose a simple dataset, define objective, set up local environment. **44 + 39 minutes**
 2. Data Module: Load, clean and split datasets. **10 minutes**
 3. Feature Engineering Module: Transform raw data into model-ready features. **3 hours and 15 minutes**
-4. Feature Store Module: Store processed features making it easier to manage and serve models. **??? minutes**
-5. Unit testing Module: Test each feature from the feature store. **??? minutes**
-6. Model Training Module: Train and save the model. **66 minutes**
+4. Feature Store Module: Store processed features making it easier to manage and serve models. **55 minutes**
+5. Unit testing Module: Test each feature from the feature store. **25 minutes**
+6. Model Training Module: Train and save the model. **66 + 17 minutes**
 7. Evaluation Module: Model evaluation metrics. **??? minutes**
 8. Manual Inference Module: Load model and predict new data. **??? minutes**
 9. Experiment Tracking Module: Use ML Flow to artifacts registry. **??? minutes**

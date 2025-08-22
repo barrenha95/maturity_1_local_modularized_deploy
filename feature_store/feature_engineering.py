@@ -12,10 +12,10 @@ This module handles the process of loading and cleaning raw data.
 Usage:
 ------
 - Import as a module:
-    from load_data import load_data, clean_data
+    from feature_store.feature_engineering import load_data, clean_data, engineering
 
 - Run as a script for quick automated tests:
-    python load_data.py
+    python feature_engineering.py
 
 Functions:
 ----------
@@ -27,9 +27,6 @@ Functions:
 
 - engineering(df: pd.DataFrame) -> pd.DataFrame
     Apply the data wrangling operations selected for this project.
-
-- write_data(df: pd.DataFrame, filepath: str) -> None
-    Saves the processed DataFrame to a CSV file.
 
 """
 
@@ -126,7 +123,7 @@ Functions:
 """
 
 if __name__ == "__main__":
-    print("Running quick self-test for load_data.py...")
+    print("Running quick self-test for feature_engineering.py...")
 
     # Create a dummy DataFrame for testing
     test_df = pd.DataFrame({
@@ -152,6 +149,10 @@ if __name__ == "__main__":
 
     print("\nCleaned test dataframe:")
     print(cleaned)
+
+    engineered = engineering(cleaned)
+    print("\nEngineered test dataframe:")
+    print(engineered)
 
     # Check basic conditions
     assert cleaned.isna().sum().sum() == 0, "❌ Missing values were not handled!"
