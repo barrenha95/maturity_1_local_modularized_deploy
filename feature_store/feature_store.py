@@ -36,8 +36,11 @@ Functions:
 
 import pandas as pd
 import os
+import shutil
 from pathlib import Path
+from datetime import datetime
 import numpy  as np
+
 
 # =========================
 # Core Functions
@@ -65,7 +68,7 @@ class FeatureStore:
             df = df.drop_duplicates()
         
         # save with the new data
-        df.to_parquet(file_path, index=False)
+        df.to_parquet(file_path, partition_cols=['transaction_id'])
 
     def load_offline(self, name):
         """Load features from offline store (for training)."""
@@ -91,24 +94,33 @@ Functions:
 
 def test_save_and_load():
     path = "data/features/test_store.parquet"
-    if os.path.exists(path):
-        os.remove(path)
+    
+    # Check if the directory exists before attempting to remove it (optional, but good practice)
+    if os.path.exists(path) and os.path.isdir(path):
+        try:
+            shutil.rmtree(path)
+            print(f"Directory '{path}' and its contents removed successfully.")
+        except OSError as e:
+            print(f"Error: {path} : {e.strerror}")
+
 
     store = FeatureStore()
     df1 = pd.DataFrame({
-        "Transaction_ID"       : [1, 2, 3],
-        "Timestamp"            : ["2023-01-06 11:20:00	", 1, None],
-        "Vehicle_Type"         : ["Bus", 1, None],
-        "FastagID"             : ["FTG-001-ABC-121	", 1, None],
-        "TollBoothID"          : ["A-101	", 1, None],
-        "Lane_Type"            : ["Express	", 1, None],
-        "Vehicle_Dimensions"   : ["Large	", 1, None],
-        "Transaction_Amount"   : ["350", 1, None],
-        "Amount_paid"          : ["120	", 1, None],
-        "Geographical_Location": ["13.059816123454882, 77.77068662374292	", 1, None],
-        "Vehicle_Speed"        : ["65	", 1, None],
-        "Vehicle_Plate_Number" : ["KA11AB1234	", 1, None],
-        "Fraud_indicator"      : ["Fraud", 1, None]
+        "transaction_id"        : [1],
+        "vehicle_type"          : [2.0],
+        "fastagid"              : [1],
+        "tollboothid"           : [1.0],
+        "lane_type"             : [0.0],
+        "vehicle_dimensions"    : [3.0],
+        "fraud_indicator"       : ['fraud'],
+        "date"                  : ['2025-08-25'],
+        "day"                   : ['25'],
+        "hour"                  : ['20'],
+        "transaction_amount_cat": [2],
+        "discount"              : [1],
+        "no_change"             : [0],
+        "penalty"               : [0],
+        "vehicle_speed_cat"     : [1]
     })
 
     try:
@@ -123,8 +135,8 @@ def test_save_and_load():
         print("❌ test_load_offline failed")
         print(f"Error caught: {e}")
 
-    assert len(loaded) == 3
-    assert "Transaction_ID" in loaded.columns
+    assert len(loaded) == 1
+    assert "transaction_id" in loaded.columns
     print("✅ test_save_and_load passed")
 
 
@@ -135,42 +147,47 @@ def test_append_data():
 
     store = FeatureStore(path)
     df1 = pd.DataFrame({
-        "Transaction_ID"       : [1, 2],
-        "Timestamp"            : ["2023-01-06 11:20:00	", 1],
-        "Vehicle_Type"         : ["Bus", 1],
-        "FastagID"             : ["FTG-001-ABC-121	", 1],
-        "TollBoothID"          : ["A-101	", 1],
-        "Lane_Type"            : ["Express	", 1],
-        "Vehicle_Dimensions"   : ["Large	", 1],
-        "Transaction_Amount"   : ["350", 1],
-        "Amount_paid"          : ["120	", 1],
-        "Geographical_Location": ["13.059816123454882, 77.77068662374292	", 1],
-        "Vehicle_Speed"        : ["65	", 1],
-        "Vehicle_Plate_Number" : ["KA11AB1234	", 1],
-        "Fraud_indicator"      : ["Fraud", 1]
+        "transaction_id"        : [1],
+        "vehicle_type"          : [2.0],
+        "fastagid"              : [1],
+        "tollboothid"           : [1.0],
+        "lane_type"             : [0.0],
+        "vehicle_dimensions"    : [3.0],
+        "fraud_indicator"       : ['fraud'],
+        "date"                  : ['2025-08-25'],
+        "day"                   : ['25'],
+        "hour"                  : ['20'],
+        "transaction_amount_cat": [2],
+        "discount"              : [1],
+        "no_change"             : [0],
+        "penalty"               : [0],
+        "vehicle_speed_cat"     : [1]
     })
-    store.save_offline(df1)
+
+    store.save_offline(df1, name = 'test_store')
 
     df2 = pd.DataFrame({
-        "Transaction_ID"       : [3],
-        "Timestamp"            : [None],
-        "Vehicle_Type"         : [None],
-        "FastagID"             : [None],
-        "TollBoothID"          : [None],
-        "Lane_Type"            : [None],
-        "Vehicle_Dimensions"   : [None],
-        "Transaction_Amount"   : [None],
-        "Amount_paid"          : [None],
-        "Geographical_Location": [None],
-        "Vehicle_Speed"        : [None],
-        "Vehicle_Plate_Number" : [None],
-        "Fraud_indicator"      : [None]
+        "transaction_id"        : [2],
+        "vehicle_type"          : [3.0],
+        "fastagid"              : [4],
+        "tollboothid"           : [5.0],
+        "lane_type"             : [6.0],
+        "vehicle_dimensions"    : [7.0],
+        "fraud_indicator"       : ['fraud'],
+        "date"                  : ['2025-08-25'],
+        "day"                   : ['25'],
+        "hour"                  : ['20'],
+        "transaction_amount_cat": [8],
+        "discount"              : [9],
+        "no_change"             : [0],
+        "penalty"               : [0],
+        "vehicle_speed_cat"     : [1]
     })
     store.save_offline(df2)
 
     loaded = store.load_offline()
-    assert len(loaded) == 3
-    assert loaded["Transaction_ID"].tolist() == [1, 2, 3]
+    assert len(loaded) == 2
+    assert loaded["Transaction_ID"].tolist() == [1, 2]
     print("✅ test_append_data passed")
 
 

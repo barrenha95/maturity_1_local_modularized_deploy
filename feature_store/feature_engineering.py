@@ -52,6 +52,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop_duplicates()
     df = df.dropna()  # Simplest strategy: drop missing
     df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+    df = df.applymap(lambda x: x.lower() if isinstance(x, str) else x)
     return df
 
 def engineering(df: pd.DataFrame) -> pd.DataFrame:
@@ -108,6 +109,8 @@ def engineering(df: pd.DataFrame) -> pd.DataFrame:
                 , 'transaction_amount'
                 , 'amount_paid'
                 , 'vehicle_speed'], axis=1)
+    
+    df = clean_data(df)
 
     return df
 
@@ -131,15 +134,15 @@ if __name__ == "__main__":
         "Transaction_ID"       : [1, 2, 3],
         "Timestamp"            : [datetime.now(), datetime.now(), datetime.now()],
         "Vehicle_Type"         : ["Bus", 1, None],
-        "FastagID"             : ["FTG-001-ABC-121	", 1, None],
-        "TollBoothID"          : ["A-101	", 1, None],
-        "Lane_Type"            : ["Express	", 1, None],
-        "Vehicle_Dimensions"   : ["Large	", 1, None],
+        "FastagID"             : ["FTG-001-ABC-121", 1, None],
+        "TollBoothID"          : ["A-101", 1, None],
+        "Lane_Type"            : ["Express", 1, None],
+        "Vehicle_Dimensions"   : ["Large", 1, None],
         "Transaction_Amount"   : ["350", 1, None],
-        "Amount_paid"          : ["120	", 1, None],
-        "Geographical_Location": ["13.059816123454882, 77.77068662374292	", 1, None],
-        "Vehicle_Speed"        : ["65	", 1, None],
-        "Vehicle_Plate_Number" : ["KA11AB1234	", 1, None],
+        "Amount_paid"          : ["120", 1, None],
+        "Geographical_Location": ["13.059816123454882, 77.77068662374292", 1, None],
+        "Vehicle_Speed"        : ["65", 1, None],
+        "Vehicle_Plate_Number" : ["KA11AB1234", 1, None],
         "Fraud_indicator"      : ["Fraud", 1, None]
     })
 
