@@ -60,12 +60,21 @@ class FeatureStore:
         if os.path.exists(file_path):
             # load the old offline feature store
             old_df = pd.read_parquet(file_path)
+            print(old_df)
 
             # bind new rows
             df = pd.concat([old_df, df], ignore_index=True)
+            print(df)
 
             # remove duplicates
             df = df.drop_duplicates()
+
+            if os.path.exists(file_path) and os.path.isdir(file_path):
+                try:
+                    shutil.rmtree(file_path)
+                    print(f"Directory '{file_path}' and its contents removed successfully.")
+                except OSError as e:
+                    print(f"Error: {file_path} : {e.strerror}")
         
         # save with the new data
         df.to_parquet(file_path, partition_cols=['transaction_id'])
@@ -93,7 +102,7 @@ Functions:
 """
 
 def test_save_and_load():
-    path = "data/features/test_store.parquet"
+    path = "data/features/"
     
     # Check if the directory exists before attempting to remove it (optional, but good practice)
     if os.path.exists(path) and os.path.isdir(path):
@@ -141,11 +150,18 @@ def test_save_and_load():
 
 
 def test_append_data():
-    path = "data/features/test_store.parquet"
-    if os.path.exists(path):
-        os.remove(path)
-
+    path = "data/features/"
+    
+    # Check if the directory exists before attempting to remove it (optional, but good practice)
+    if os.path.exists(path) and os.path.isdir(path):
+        try:
+            shutil.rmtree(path)
+            print(f"Directory '{path}' and its contents removed successfully.")
+        except OSError as e:
+            print(f"Error: {path} : {e.strerror}")
+    
     store = FeatureStore(path)
+    
     df1 = pd.DataFrame({
         "transaction_id"        : [1],
         "vehicle_type"          : [2.0],
@@ -167,35 +183,37 @@ def test_append_data():
     store.save_offline(df1, name = 'test_store')
 
     df2 = pd.DataFrame({
-        "transaction_id"        : [2],
-        "vehicle_type"          : [3.0],
-        "fastagid"              : [4],
-        "tollboothid"           : [5.0],
-        "lane_type"             : [6.0],
-        "vehicle_dimensions"    : [7.0],
-        "fraud_indicator"       : ['fraud'],
-        "date"                  : ['2025-08-25'],
-        "day"                   : ['25'],
-        "hour"                  : ['20'],
-        "transaction_amount_cat": [8],
-        "discount"              : [9],
-        "no_change"             : [0],
-        "penalty"               : [0],
-        "vehicle_speed_cat"     : [1]
+        "transaction_id"        : [2, 3],
+        "vehicle_type"          : [3.0, 9.0],
+        "fastagid"              : [4, 5],
+        "tollboothid"           : [5.0, 6.0],
+        "lane_type"             : [6.0, 10.0],
+        "vehicle_dimensions"    : [7.0, 14.0],
+        "fraud_indicator"       : ['fraud', 'fraud'],
+        "date"                  : ['2025-08-25', '2025-08-25'],
+        "day"                   : ['25', '26'],
+        "hour"                  : ['20', '19'],
+        "transaction_amount_cat": [8, 1],
+        "discount"              : [9, 1],
+        "no_change"             : [0, 1],
+        "penalty"               : [0, 1],
+        "vehicle_speed_cat"     : [1, 1]
     })
-    store.save_offline(df2)
+    store.save_offline(df2, name = 'test_store')
 
-    loaded = store.load_offline()
-    assert len(loaded) == 2
-    assert loaded["Transaction_ID"].tolist() == [1, 2]
+    loaded = store.load_offline(name = 'test_store')
+    print(loaded)
+    
+    assert len(loaded) == 3
+    assert loaded["transaction_id"].tolist() == [1, 2, 3]
     print("✅ test_append_data passed")
 
 
 def test_load_nonexistent():
-    path = "data/features/nonexistent.parquet"
+    path = "data/features/"
     store = FeatureStore(path)
     try:
-        store.load_offline()
+        store.load_offline(name = 'nonexistent')
     except FileNotFoundError:
         print("✅ test_load_nonexistent passed")
         return
@@ -213,3 +231,13 @@ if __name__ == "__main__":
     test_load_nonexistent()
     
     print("\n✅ All tests passed for feature_store.py")
+
+    path = "data/features/"
+    
+    # Check if the directory exists before attempting to remove it (optional, but good practice)
+    if os.path.exists(path) and os.path.isdir(path):
+        try:
+            shutil.rmtree(path)
+            print(f"Directory '{path}' and its contents removed successfully.")
+        except OSError as e:
+            print(f"Error: {path} : {e.strerror}")
