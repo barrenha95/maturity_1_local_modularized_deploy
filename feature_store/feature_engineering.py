@@ -33,7 +33,7 @@ Functions:
 import pandas as pd
 import numpy  as np
 from datetime import datetime
-from project_encodings  import (VEHICLE_ENCODING, TOLLBOOTH_ENCODING, LANE_ENCODING, DIMENSIONS_ENCODING)
+from feature_store.project_encodings  import (VEHICLE_ENCODING, TOLLBOOTH_ENCODING, LANE_ENCODING, DIMENSIONS_ENCODING)
 
 # =========================
 # Core Functions
