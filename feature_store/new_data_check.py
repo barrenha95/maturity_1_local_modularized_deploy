@@ -54,7 +54,7 @@ def apply_transformations(filepath: str) -> pd.DataFrame:
 
     return df
     
-def check_and_save(filepath = 'data/features/'):
+def check_and_save(filepath = 'data/'):
     """Check if exists new data."""
 
     # Checking if exists feature store
@@ -63,7 +63,7 @@ def check_and_save(filepath = 'data/features/'):
         pass
     else:
         if os.path.exists(filepath + "train.csv"):
-            store = FeatureStore(filepath)
+            store = FeatureStore(filepath + 'features/')
             df = apply_transformations(filepath + "train.csv")
             store.save_offline(df, name = 'train_store')
             print("Feature Store created.")
@@ -74,7 +74,7 @@ def check_and_save(filepath = 'data/features/'):
 
     if os.path.exists(filepath + 'new.csv'):
         print("New file exists")
-        store = FeatureStore(filepath + "features/")
+        store = FeatureStore(filepath )
         new_df = apply_transformations(filepath + 'new.csv')
         store.save_offline(new_df, name = 'train_store')
         os.remove(filepath + 'new.csv') # remove new data
@@ -94,7 +94,7 @@ Functions:
 """
 def test_fs_non_existance():
     filepath_test = 'data/auto_test/'
-    check_and_save(filepath_test)
+    check_and_save(filepath=filepath_test)
 
     if not os.path.exists(filepath_test):
         print("✅ non existance test passed")
@@ -120,7 +120,7 @@ def test_only_train():
 
     if os.path.exists(filepath_test):
         shutil.rmtree(filepath_test) # removing file
-        
+
     os.mkdir(filepath_test)
     df.to_csv(filepath_test + 'train.csv')
 
@@ -132,7 +132,7 @@ def test_only_train():
 
     if os.path.exists(filepath_test + 'train.csv'):
         
-        store = FeatureStore(filepath_test)
+        store = FeatureStore(filepath_test + "features/")
         train_df = store.load_offline(name = 'train_store')
 
         shutil.rmtree(filepath_test) # removing file
