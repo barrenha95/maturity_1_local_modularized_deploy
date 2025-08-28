@@ -41,7 +41,7 @@ from feature_store.project_encodings  import (VEHICLE_ENCODING, TOLLBOOTH_ENCODI
 def load_data(filepath: str) -> pd.DataFrame:
     """Load data from a CSV file."""
     try:
-        df = pd.read_csv(filepath, parse_dates=['Timestamp'])
+        df = pd.read_csv(filepath, parse_dates=['Timestamp'],index_col = 0)
         return df
     except Exception as e:
         raise IOError(f"Error loading file {filepath}: {e}")
@@ -52,7 +52,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop_duplicates()
     df = df.dropna()  # Simplest strategy: drop missing
     df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-    df = df.applymap(lambda x: x.lower() if isinstance(x, str) else x)
+    df = df.map(lambda x: x.lower() if isinstance(x, str) else x)
     return df
 
 def engineering(df: pd.DataFrame) -> pd.DataFrame:

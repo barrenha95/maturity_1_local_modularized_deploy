@@ -60,24 +60,21 @@ class FeatureStore:
         if os.path.exists(file_path):
             # load the old offline feature store
             old_df = pd.read_parquet(file_path)
-            print(old_df)
 
             # bind new rows
-            df = pd.concat([old_df, df], ignore_index=True)
-            print(df)
+            bind_df = pd.concat([old_df, df], ignore_index=True)
 
             # remove duplicates
-            df = df.drop_duplicates()
+            bind_df = bind_df.drop_duplicates()
+            
+            # remove old files
+            shutil.rmtree(file_path)
 
-            if os.path.exists(file_path) and os.path.isdir(file_path):
-                try:
-                    shutil.rmtree(file_path)
-                    print(f"Directory '{file_path}' and its contents removed successfully.")
-                except OSError as e:
-                    print(f"Error: {file_path} : {e.strerror}")
-        
-        # save with the new data
-        df.to_parquet(file_path, partition_cols=['transaction_id'])
+            # save with the new data
+            bind_df.to_parquet(file_path, partition_cols=['month','year'])
+
+        else:
+            df.to_parquet(file_path, partition_cols=['month','year'])
 
     def load_offline(self, name):
         """Load features from offline store (for training)."""
@@ -129,7 +126,9 @@ def test_save_and_load():
         "discount"              : [1],
         "no_change"             : [0],
         "penalty"               : [0],
-        "vehicle_speed_cat"     : [1]
+        "vehicle_speed_cat"     : [1],
+        "month"                 : [1],
+        "year"                  : [2023]
     })
 
     try:
@@ -177,7 +176,9 @@ def test_append_data():
         "discount"              : [1],
         "no_change"             : [0],
         "penalty"               : [0],
-        "vehicle_speed_cat"     : [1]
+        "vehicle_speed_cat"     : [1],
+        "month"                 : [1],
+        "year"                  : [2023]
     })
 
     store.save_offline(df1, name = 'test_store')
@@ -197,13 +198,14 @@ def test_append_data():
         "discount"              : [9, 1],
         "no_change"             : [0, 1],
         "penalty"               : [0, 1],
-        "vehicle_speed_cat"     : [1, 1]
+        "vehicle_speed_cat"     : [1, 1],
+        "month"                 : [1, 1],
+        "year"                  : [2023, 2023]
     })
     store.save_offline(df2, name = 'test_store')
 
     loaded = store.load_offline(name = 'test_store')
-    print(loaded)
-    
+     
     assert len(loaded) == 3
     assert loaded["transaction_id"].tolist() == [1, 2, 3]
     print("✅ test_append_data passed")

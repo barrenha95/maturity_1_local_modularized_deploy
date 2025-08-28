@@ -19,64 +19,72 @@ Usage:
 
 Functions:
 ----------
-- check_data(filepath: str) -> 
+- check_and_save(filepath: str) -> 
     Check if exists new_data on the repository.
 
 - apply_transformations(df: pd.DataFrame) -> pd.DataFrame
     Apply all the transformations of feature_engineering.py and feature_store.py.
 
-- save_features(df: pd.DataFrame) -> 
-    Save what will be called as train dataframe
-
 """
 
 import pandas as pd
 import numpy  as np
+import shutil
+
 import os
+from feature_store.feature_store import FeatureStore
 from feature_store.feature_engineering  import (load_data, clean_data, engineering)
-from feature_store.feature_store        import (save_offline, load_offline)
 
 
 # =========================
 # Core Functions
 # =========================
-def check_data(filepath = 'data/'):
+
+def apply_transformations(filepath: str) -> pd.DataFrame:
+    """Apply feature engineering transformations."""
+
+    df = load_data(filepath)
+    df = clean_data(df)
+    df = engineering(df)
+
+    # creating the partition cols
+    df['month']  = pd.to_datetime(df['date']).dt.month
+    df['year']   = pd.to_datetime(df['date']).dt.year
+
+    return df
+    
+def check_and_save(filepath = 'data/'):
     """Check if exists new data."""
 
+    # Checking if exists feature store
     fs_path = filepath + "features/"
+    train_path = filepath + "train.csv"
+    new_path = filepath + 'new.csv'
     
-    # Check if the directory exists before attempting to remove it (optional, but good practice)
-    if os.path.exists(fs_path) and os.path.isdir(fs_path):
+    if os.path.exists(fs_path):
         pass
-
     else:
         store = FeatureStore(fs_path)
+        
+        df = apply_transformations(train_path)
 
-    if os.path.exists(filepath):
-        try:
-            df = load_data(filepath)
-            print(f"Directory '{filepath}' exists.")
-        except OSError as e:
-            print(f"Error: {filepath} : {e.strerror}")
+        store.save_offline(df, name = 'train_store')
+
+    # Checking if exists new data
+
+    if os.path.exists(new_path):
+        print("New file exists")
+
+        store = FeatureStore(fs_path)
+
+        new_df = apply_transformations(new_path)
+
+        store.save_offline(new_df, name = 'train_store')
+        
+        os.remove(new_path) # remove new data
+
     else:
-            print(f"Directory '{filepath}' not exists.")
-
-    
-
-
-
-
-def apply_transformations(df: pd.DataFrame) -> pd.DataFrame:
-
-    #df = load_data(file_path + 'train.csv')
-    #df = clean_data(df)
-    #df = engineering(df)
-
-    print(df)
-    
-
-def save_features(df: pd.DataFrame):
-    """Clean raw data (remove duplicates, handle missing values)."""
+        print("There are no new files")
     
 # =========================
 # Standalone Script (Testing)
@@ -92,4 +100,4 @@ Functions:
 
 if __name__ == "__main__":
 
-    check_data()
+    check_and_save()
