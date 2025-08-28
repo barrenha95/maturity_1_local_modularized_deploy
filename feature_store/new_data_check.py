@@ -62,13 +62,16 @@ def check_and_save(filepath = 'data/'):
     new_path = filepath + 'new.csv'
     
     if os.path.exists(fs_path):
+        print("Feature Store already exists.")
         pass
     else:
-        store = FeatureStore(fs_path)
-        
-        df = apply_transformations(train_path)
-
-        store.save_offline(df, name = 'train_store')
+        if os.path.exists(train_path):
+            store = FeatureStore(fs_path)
+            df = apply_transformations(train_path)
+            store.save_offline(df, name = 'train_store')
+            print("Feature Store created.")
+        else:
+            print("There are no train file.")
 
     # Checking if exists new data
 
@@ -93,11 +96,20 @@ def check_and_save(filepath = 'data/'):
 """
 Functions:
 ----------
-- Standard record, with good case of fillement in all columns
-- A record filled only with integer number for all columns
-- A record filled with None for all columns
+- Run when feature store doesn't exist
+- Run when feature store exists
+- Ruen when there are no files
 """
 
-if __name__ == "__main__":
 
-    check_and_save()
+def test_fs_non_existance():
+    filepath_test = 'data/auto_test/'
+    check_and_save(filepath_test)
+
+    if not os.path.exists(filepath_test):
+        print("✅ non existance test passed")
+
+
+    
+if __name__ == "__main__":
+    test_fs_non_existance()
