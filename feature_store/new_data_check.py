@@ -74,7 +74,7 @@ def check_and_save(filepath = 'data/'):
 
     if os.path.exists(filepath + 'new.csv'):
         print("New file exists")
-        store = FeatureStore(filepath )
+        store = FeatureStore(filepath + 'features/')
         new_df = apply_transformations(filepath + 'new.csv')
         store.save_offline(new_df, name = 'train_store')
         os.remove(filepath + 'new.csv') # remove new data
@@ -144,8 +144,71 @@ def test_only_train():
         print("❌ test_only_train failed")
         print("There are no files on train feature store.")
 
+def test_train_and_new():
+    filepath_test = 'data/auto_test/'
+
+    df = pd.DataFrame({
+        "Transaction_ID"       : [1],
+        "Timestamp"            : [datetime.now()],
+        "Vehicle_Type"         : ["Bus"],
+        "FastagID"             : ["FTG-001-ABC-121"],
+        "TollBoothID"          : ["A-101"],
+        "Lane_Type"            : ["Express"],
+        "Vehicle_Dimensions"   : ["Large"],
+        "Transaction_Amount"   : ["350"],
+        "Amount_paid"          : ["120"],
+        "Geographical_Location": ["13.059816123454882, 77.77068662374292"],
+        "Vehicle_Speed"        : ["65"],
+        "Vehicle_Plate_Number" : ["KA11AB1234"],
+        "Fraud_indicator"      : ["Fraud"]
+    })
+
+    df2 = pd.DataFrame({
+        "Transaction_ID"       : [2],
+        "Timestamp"            : [datetime.now()],
+        "Vehicle_Type"         : ["Bus"],
+        "FastagID"             : ["FTG-001-ABC-121"],
+        "TollBoothID"          : ["A-101"],
+        "Lane_Type"            : ["Express"],
+        "Vehicle_Dimensions"   : ["Large"],
+        "Transaction_Amount"   : ["350"],
+        "Amount_paid"          : ["120"],
+        "Geographical_Location": ["13.059816123454882, 77.77068662374292"],
+        "Vehicle_Speed"        : ["65"],
+        "Vehicle_Plate_Number" : ["KA11AB1234"],
+        "Fraud_indicator"      : ["Fraud"]
+    })
+
+
+    if os.path.exists(filepath_test):
+        shutil.rmtree(filepath_test) # removing file
+
+    os.mkdir(filepath_test)
+    df.to_csv(filepath_test + 'train.csv')
+    df2.to_csv(filepath_test + 'new.csv')
+
+    try:
+        check_and_save(filepath_test)
+    except ValueError as e:
+        print("❌ test_train_and_new failed")
+        print(f"Error caught, in check_and_save: {e}")
+
+    if os.path.exists(filepath_test + 'train.csv'):
+        
+        store = FeatureStore(filepath_test + "features/")
+        train_df = store.load_offline(name = 'train_store')
+
+        shutil.rmtree(filepath_test) # removing file
+        assert len(train_df) == 2
+        assert train_df['transaction_id'].tolist() == [1,2]
+        print("✅ test_train_and_new passed")
     
+    else:
+        print("❌ test_train_and_new failed")
+        print("There are no files feature store.")
+
 if __name__ == "__main__":
     test_fs_non_existance()
 
     test_only_train()
+    test_train_and_new()
