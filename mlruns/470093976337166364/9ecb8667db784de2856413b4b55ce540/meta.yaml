@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/9ecb8667db784de2856413b4b55ce540/artifacts
+deleted_time: 1756468875894
+end_time: 1756468753991
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 9ecb8667db784de2856413b4b55ce540
+run_name: overjoyed-sloth-902
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468750321
+status: 3
+tags: []
+user_id: isabarrenha

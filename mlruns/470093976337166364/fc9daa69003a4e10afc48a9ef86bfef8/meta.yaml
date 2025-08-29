@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/fc9daa69003a4e10afc48a9ef86bfef8/artifacts
+deleted_time: 1756469770340
+end_time: 1756469593693
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: fc9daa69003a4e10afc48a9ef86bfef8
+run_name: gregarious-gnat-436
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469590170
+status: 3
+tags: []
+user_id: isabarrenha

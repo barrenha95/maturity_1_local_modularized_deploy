@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/8118a2206e0a4b2f86ef73b4de3a3f44/artifacts
+deleted_time: 1756468875945
+end_time: 1756468776225
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 8118a2206e0a4b2f86ef73b4de3a3f44
+run_name: wistful-fox-151
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468772608
+status: 3
+tags: []
+user_id: isabarrenha

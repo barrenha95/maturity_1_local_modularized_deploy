@@ -36,16 +36,16 @@ https://www.kaggle.com/datasets/thegoanpanda/fastag-fraud-detection-datesets-fic
 To make the project more similar to real-life problems, I split it into small tasks.
 As the project progresses, I will add the time spent on each task. 
 
-1. Problem Selection & Setup: Choose a simple dataset, define objective, set up local environment. **44 + 39 minutes**
+1. Problem Selection & Setup: Choose a simple dataset, define objective, set up local environment. **1 hour and 23 minutes**
 2. Data Module: Load, clean and split datasets. **10 minutes**
-3. Feature Engineering Module: Transform raw data into model-ready features. **3 hours and 15 minutes**
-4. Feature Store Module: Store processed features making it easier to manage and serve models. **??? minutes**
-5. Unit testing Module: Test each feature from the feature store. **??? minutes**
-6. Model Training Module: Train and save the model. **??? minutes**
-7. Evaluation Module: Model evaluation metrics. **??? minutes**
+3. Feature Engineering Module: Transform raw data into model-ready features. **2 hours and 14 minutes**
+4. Feature Store Module: Store processed features making it easier to manage and serve models. **2 hours and 2 minutes**
+5. Unit testing Module: Test each feature from the feature store. **1 hour and 45 minutes**
+6. Model Training Module: Train and save the model. **61 + 66 + 17 + 137 minutes**
+7. Evaluation Module: Model evaluation metrics. **23 minutes**
 8. Manual Inference Module: Load model and predict new data. **??? minutes**
-9. Experiment Tracking Module: Use ML Flow to artifacts registry. **??? minutes**
-10. Deployment Modules: Flask app and orchestration script. **??? minutes**
+9. Experiment Tracking Module: Use ML Flow to artifacts registry. **16 + 13 minutes**
+10. Deployment Modules: Flask app and orchestration script. **75 + 41 minutes**
 11. Documentation: Write a README explaining how to run each script manually. Mention which files to edit or execute.
 12. Testing the Manual Process: Simulate being a user: clone the project, run everything manually from scratch, and fix any issues.
 13. Reflection & Publication Prep: Write a summary (for LinkedIn or blog): what this maturity level is, what you did, what’s missing, and the next steps.

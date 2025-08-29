@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/c6585439570e41e9b13a7cd1dd18d157/artifacts
+deleted_time: 1756469166849
+end_time: 1756469138984
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: c6585439570e41e9b13a7cd1dd18d157
+run_name: luminous-sloth-548
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469135362
+status: 3
+tags: []
+user_id: isabarrenha

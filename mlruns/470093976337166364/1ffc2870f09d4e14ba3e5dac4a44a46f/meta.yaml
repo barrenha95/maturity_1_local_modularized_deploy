@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/1ffc2870f09d4e14ba3e5dac4a44a46f/artifacts
+deleted_time: 1756469770322
+end_time: 1756469608523
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 1ffc2870f09d4e14ba3e5dac4a44a46f
+run_name: victorious-mule-945
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469604864
+status: 3
+tags: []
+user_id: isabarrenha

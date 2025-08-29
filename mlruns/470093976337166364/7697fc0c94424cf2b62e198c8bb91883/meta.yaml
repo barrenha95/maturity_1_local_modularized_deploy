@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7697fc0c94424cf2b62e198c8bb91883/artifacts
+deleted_time: 1756469371515
+end_time: 1756469169000
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 7697fc0c94424cf2b62e198c8bb91883
+run_name: smiling-seal-348
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469165307
+status: 3
+tags: []
+user_id: isabarrenha

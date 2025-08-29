@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/affc15ea8e404184b358724ff43ad78d/artifacts
+deleted_time: 1756469371504
+end_time: 1756469161438
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: affc15ea8e404184b358724ff43ad78d
+run_name: caring-hawk-149
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469157901
+status: 3
+tags: []
+user_id: isabarrenha

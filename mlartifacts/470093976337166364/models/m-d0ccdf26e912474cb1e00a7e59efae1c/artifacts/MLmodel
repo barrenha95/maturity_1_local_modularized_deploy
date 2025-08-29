@@ -1,0 +1,33 @@
+artifact_path: mlflow-artifacts:/470093976337166364/models/m-d0ccdf26e912474cb1e00a7e59efae1c/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+is_signature_from_type_hint: false
+mlflow_version: 3.3.1
+model_id: m-d0ccdf26e912474cb1e00a7e59efae1c
+model_size_bytes: 1568
+model_uuid: m-d0ccdf26e912474cb1e00a7e59efae1c
+prompts: null
+run_id: 6c7015d571114f17b834443f58e2238f
+signature:
+  inputs: '[{"type": "double", "name": "vehicle_type", "required": true}, {"type":
+    "long", "name": "fastagid", "required": true}, {"type": "long", "name": "vehicle_dimensions",
+    "required": true}, {"type": "string", "name": "transaction_amount_cat", "required":
+    true}, {"type": "long", "name": "discount", "required": true}, {"type": "long",
+    "name": "no_change", "required": true}, {"type": "long", "name": "penalty", "required":
+    true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-08-29 12:11:44.432926'

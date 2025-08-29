@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/fe86ab89b1c547839bd55c2a1f96a222/artifacts
+deleted_time: 1756469166832
+end_time: 1756469127544
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: fe86ab89b1c547839bd55c2a1f96a222
+run_name: enthused-stag-106
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469123930
+status: 3
+tags: []
+user_id: isabarrenha

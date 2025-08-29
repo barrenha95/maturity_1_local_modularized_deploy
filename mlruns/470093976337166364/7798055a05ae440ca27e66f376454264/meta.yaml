@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7798055a05ae440ca27e66f376454264/artifacts
+deleted_time: 1756469770341
+end_time: 1756469590073
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 7798055a05ae440ca27e66f376454264
+run_name: carefree-fowl-376
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469586464
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/b3c95116e9aa45a3ae35a7223f7ef8c1/artifacts
+deleted_time: 1756469564518
+end_time: 1756469496400
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: b3c95116e9aa45a3ae35a7223f7ef8c1
+run_name: lyrical-ram-710
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469492349
+status: 3
+tags: []
+user_id: isabarrenha

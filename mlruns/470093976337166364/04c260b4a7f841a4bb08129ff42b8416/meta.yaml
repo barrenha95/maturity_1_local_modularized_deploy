@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/04c260b4a7f841a4bb08129ff42b8416/artifacts
+deleted_time: 1756468734801
+end_time: 1756468644882
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 04c260b4a7f841a4bb08129ff42b8416
+run_name: youthful-squid-227
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468641333
+status: 3
+tags: []
+user_id: isabarrenha

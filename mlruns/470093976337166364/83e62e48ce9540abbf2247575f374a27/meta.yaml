@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/83e62e48ce9540abbf2247575f374a27/artifacts
+deleted_time: 1756468875921
+end_time: 1756468783904
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 83e62e48ce9540abbf2247575f374a27
+run_name: bald-ant-230
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468780033
+status: 3
+tags: []
+user_id: isabarrenha

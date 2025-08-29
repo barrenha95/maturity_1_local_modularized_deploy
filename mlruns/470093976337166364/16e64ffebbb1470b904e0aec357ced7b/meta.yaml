@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/16e64ffebbb1470b904e0aec357ced7b/artifacts
+deleted_time: 1756468734799
+end_time: 1756468648583
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 16e64ffebbb1470b904e0aec357ced7b
+run_name: merciful-fly-213
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468644980
+status: 3
+tags: []
+user_id: isabarrenha

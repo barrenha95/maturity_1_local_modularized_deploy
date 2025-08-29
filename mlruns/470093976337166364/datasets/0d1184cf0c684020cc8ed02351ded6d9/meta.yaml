@@ -1,0 +1,12 @@
+digest: 59e3ab9f
+name: dataset
+profile: '{"num_rows": 235, "num_elements": 1645}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "vehicle_type", "required":
+  true}, {"type": "double", "name": "fastagid", "required": true}, {"type": "double",
+  "name": "vehicle_dimensions", "required": true}, {"type": "string", "name": "transaction_amount_cat",
+  "required": true}, {"type": "double", "name": "discount", "required": true}, {"type":
+  "double", "name": "no_change", "required": true}, {"type": "double", "name": "penalty",
+  "required": true}]}'
+source: '{"tags": {"mlflow.user": "isabarrenha", "mlflow.source.name": "/home/isabarrenha/Documents/Portfolio/maturity_1_local_modularized_deploy/training/model_training.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "5f332fe3e08b18f13b366a694b7ed0013753eddb"}}'
+source_type: code
