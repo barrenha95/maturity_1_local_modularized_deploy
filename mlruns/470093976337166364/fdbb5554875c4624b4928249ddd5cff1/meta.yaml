@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/fdbb5554875c4624b4928249ddd5cff1/artifacts
+deleted_time: 1756468734844
+end_time: 1756468607749
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: fdbb5554875c4624b4928249ddd5cff1
+run_name: zealous-doe-445
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468604052
+status: 3
+tags: []
+user_id: isabarrenha

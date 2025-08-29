@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/ea12d82fbaa949a9973b1c9280b1d88a/artifacts
+deleted_time: 1756469166826
+end_time: 1756469094914
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: ea12d82fbaa949a9973b1c9280b1d88a
+run_name: industrious-pug-834
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469091114
+status: 3
+tags: []
+user_id: isabarrenha

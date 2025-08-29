@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/48b686d4a7ff4274b9f28cc6b80291d9/artifacts
+deleted_time: 1756468734814
+end_time: 1756468615186
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 48b686d4a7ff4274b9f28cc6b80291d9
+run_name: efficient-horse-715
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468611635
+status: 3
+tags: []
+user_id: isabarrenha

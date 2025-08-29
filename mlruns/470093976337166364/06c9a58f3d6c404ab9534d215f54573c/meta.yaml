@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/06c9a58f3d6c404ab9534d215f54573c/artifacts
+deleted_time: 1756469166831
+end_time: 1756469046153
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 06c9a58f3d6c404ab9534d215f54573c
+run_name: classy-frog-224
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469042432
+status: 3
+tags: []
+user_id: isabarrenha

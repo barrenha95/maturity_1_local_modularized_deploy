@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7249d80778b34d2296f7252ee6c2df22/artifacts
+deleted_time: 1756468875876
+end_time: 1756468746300
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 7249d80778b34d2296f7252ee6c2df22
+run_name: gentle-sow-796
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468742634
+status: 3
+tags: []
+user_id: isabarrenha

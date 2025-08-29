@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/795dd39b88084e9d8e4fa7e35aaac463/artifacts
+deleted_time: 1756469166937
+end_time: 1756469064623
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 795dd39b88084e9d8e4fa7e35aaac463
+run_name: big-seal-981
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469061041
+status: 3
+tags: []
+user_id: isabarrenha

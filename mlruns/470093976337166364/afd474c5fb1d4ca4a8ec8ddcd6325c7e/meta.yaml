@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/afd474c5fb1d4ca4a8ec8ddcd6325c7e/artifacts
+deleted_time: 1756468734792
+end_time: 1756468655837
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: afd474c5fb1d4ca4a8ec8ddcd6325c7e
+run_name: nebulous-loon-361
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468652338
+status: 3
+tags: []
+user_id: isabarrenha

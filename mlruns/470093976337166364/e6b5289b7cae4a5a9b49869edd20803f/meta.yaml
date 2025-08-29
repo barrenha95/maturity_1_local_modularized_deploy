@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/e6b5289b7cae4a5a9b49869edd20803f/artifacts
+deleted_time: 1756469770321
+end_time: 1756469616216
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: e6b5289b7cae4a5a9b49869edd20803f
+run_name: brawny-yak-453
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469612564
+status: 3
+tags: []
+user_id: isabarrenha

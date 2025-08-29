@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/aad9bb8221114776b66bf0ef84098b42/artifacts
+deleted_time: 1756468875893
+end_time: 1756468772511
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: aad9bb8221114776b66bf0ef84098b42
+run_name: handsome-crane-891
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468768820
+status: 3
+tags: []
+user_id: isabarrenha

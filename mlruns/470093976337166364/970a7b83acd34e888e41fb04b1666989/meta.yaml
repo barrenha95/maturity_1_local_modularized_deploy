@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/970a7b83acd34e888e41fb04b1666989/artifacts
+deleted_time: 1756468875883
+end_time: 1756468795642
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 970a7b83acd34e888e41fb04b1666989
+run_name: spiffy-mule-150
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756468791659
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/470093976337166364
+creation_time: 1756468575262
+experiment_id: '470093976337166364'
+last_update_time: 1756468575262
+lifecycle_stage: active
+name: fastag-fraud-experiments

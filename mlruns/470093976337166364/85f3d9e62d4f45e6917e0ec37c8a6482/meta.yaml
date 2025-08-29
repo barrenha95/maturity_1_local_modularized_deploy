@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/85f3d9e62d4f45e6917e0ec37c8a6482/artifacts
+deleted_time: 1756469166829
+end_time: 1756469050020
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 85f3d9e62d4f45e6917e0ec37c8a6482
+run_name: gentle-sheep-112
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756469046249
+status: 3
+tags: []
+user_id: isabarrenha
