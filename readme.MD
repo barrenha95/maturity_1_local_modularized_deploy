@@ -45,7 +45,7 @@ As the project progresses, I will add the time spent on each task.
 7. Evaluation Module: Model evaluation metrics. **23 minutes**
 8. Manual Inference Module: Load model and predict new data. **??? minutes**
 9. Experiment Tracking Module: Use ML Flow to artifacts registry. **16 + 13 minutes**
-10. Deployment Modules: Flask app and orchestration script. **75 minutes**
+10. Deployment Modules: Flask app and orchestration script. **75 + 41 minutes**
 11. Documentation: Write a README explaining how to run each script manually. Mention which files to edit or execute.
 12. Testing the Manual Process: Simulate being a user: clone the project, run everything manually from scratch, and fix any issues.
 13. Reflection & Publication Prep: Write a summary (for LinkedIn or blog): what this maturity level is, what you did, what’s missing, and the next steps.

@@ -35,12 +35,21 @@ import mlflow
 from itertools import product
 from feature_store.feature_engineering  import (load_data, clean_data, engineering)
 from feature_store.feature_store  import (save_offline, load_offline)
+from feature_store.new_data_check import check_and_save
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn import tree
 from sklearn.model_selection import GridSearchCV
 
-
+# =========================
+# ML Flow
+# =========================
+# Used to store artifcts of the model training
+# It contains :
+# - mlflow server application (that runs as an server, and store the metadata)
+# - mlflow library used to interact with the mlflow server
+# To run this script you must open an new terminal and run: mlflow server
+# The best way to run the mlflow server is on another machine like an vm or even docker
 mlflow.set_tracking_uri('http://localhost:5000') # Set which mlflow server will use
 mlflow.set_experiment(experiment_id=620958864307953100) # Set Experiment
 
@@ -106,16 +115,16 @@ def train_model(X_train: pd.DataFrame
             })
 
         
-# =========================
-# Standalone Script (Testing)
-# =========================
+# =================
+# Standalone Script
+# =================
 
 """
 Functions:
 ----------
-- Standard record, with good case of fillement in all columns
-- A record filled only with integer number for all columns
-- A record filled with None for all columns
+- Call other libs to read, clean, and create the feature store 
+- Train the model using Ml Flow library to store model artifacts
+- Train an decision tree, testing multiple parameters
 """
 
 if __name__ == "__main__":
