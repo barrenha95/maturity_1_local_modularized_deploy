@@ -34,12 +34,14 @@ import os
 import mlflow
 from itertools import product
 from feature_store.feature_engineering  import (load_data, clean_data, engineering)
-from feature_store.feature_store  import (save_offline, load_offline)
+from feature_store.feature_store  import FeatureStore
 from feature_store.new_data_check import check_and_save
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn import tree
 from sklearn.model_selection import GridSearchCV
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 # =========================
 # ML Flow
@@ -57,16 +59,30 @@ mlflow.set_experiment(experiment_id=620958864307953100) # Set Experiment
 # =========================
 # Core Functions
 # =========================
-def load_feature_store_data(filepath: str) -> pd.DataFrame:
-    """Load data from a parquet file."""
+def plot_results(results_df):
+    pivot_acc = results_df.pivot("min_samples_leaf", "min_samples_split", "acc")
+    pivot_f1  = results_df.pivot("min_samples_leaf", "min_samples_split", "f1_score")
+    pivot_auc = results_df.pivot("min_samples_leaf", "min_samples_split", "roc_auc")
 
-    df = load_data(filepath + 'train.csv')
-    df = clean_data(df)
-    df = engineering(df)
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
 
-    print(df)
+    sns.heatmap(pivot_f1, annot=True, fmt=".3f", cmap="Blues", ax=axes[0])
+    axes[0].set_title("F1-score")
+
+    sns.heatmap(pivot_auc, annot=True, fmt=".3f", cmap="Greens", ax=axes[1])
+    axes[1].set_title("ROC-AUC")
+
+    sns.heatmap(pivot_acc, annot=True, fmt=".3f", cmap="Oranges", ax=axes[2])
+    axes[2].set_title("Accuracy")
+
+    plt.show()
+
+    # Save plot locally
+    plot_path = "roc_curve.png"
+    fig.savefig(plot_path)
+    mlflow.log_artifact(plot_path)
+
     
-
 def train_model(X_train: pd.DataFrame
               , X_test: pd.DataFrame
               , y_train: pd.DataFrame
@@ -84,7 +100,7 @@ def train_model(X_train: pd.DataFrame
     for params in product(param_grid["min_samples_leaf"], param_grid["min_samples_split"]):
         min_samples_leaf, min_samples_split = params
 
-        with mlflow.start_run: # Used to save runs in the experiment
+        with mlflow.start_run(): # Used to save runs in the experiment
 
             mlflow.sklearn.autolog() # Tell mlflow to generate some logs of the run
 
@@ -101,17 +117,17 @@ def train_model(X_train: pd.DataFrame
                 random_state=42
             )
             
-            clf.fit = (X_train, y_train)
-            y_train_predict = clf.predict(X_train)
+            clf.fit(X_train, y_train)
             y_test_predict  = clf.predict(X_test)
 
-
-            acc_train = metrics.accuracy_score(y_train, y_train_predict)
-            acc_test  = metrics.accuracy_score(y_test , y_test_predict)
+            acc  = metrics.accuracy_score(y_test , y_test_predict)
+            f1 = metrics.f1_score(y_test, y_test_predict)
+            roc_auc = metrics.roc_auc_score(y_test, y_test_predict)
 
             mlflow.log_metrics({
-                "acc_train": acc_train,
-                "acc_test": acc_test
+                "accuracy": acc,
+                "f1"      : f1,
+                "roc_auc" : roc_auc
             })
 
         
@@ -129,6 +145,69 @@ Functions:
 
 if __name__ == "__main__":
 
-    df = load_feature_store_data('data/')
+    # Checking if the train data is already on feature store
+    try:
+        check_and_save(filepath = 'data/')
+        print("✅ feature store filled")
 
-    print(df)
+    except ValueError as e:
+        print("❌ feature store failed")
+        print(f"Error caught: {e}")
+
+    # Loading feature store train data
+    try:
+        store = FeatureStore(feature_storage_path='data/features/')
+        train_df = store.load_offline(name = 'train_store')
+        print("✅ data from feature store loaded")
+
+    except ValueError as e:
+        print("❌ failed to load feature store")
+        print(f"Error caught: {e}")
+
+    # Loading test
+
+    try:
+        test_df_raw = load_data(filepath='data/test.csv')
+        print("✅ test data loaded from csv")
+    except ValueError as e:
+        print("❌ failed to load test data from csv")
+        print(f"Error caught: {e}")
+
+    try:
+        test_df_clean = clean_data(df = test_df_raw)
+        print("✅ test data cleaned")
+    except ValueError as e:
+        print("❌ failed to clean test data")
+        print(f"Error caught: {e}")
+
+    try:
+        test_df = engineering(df = test_df_clean)
+        print("✅ test data finished")
+    except ValueError as e:
+        print("❌ failed to finish test data")
+        print(f"Error caught: {e}")
+
+    # Removing unused columns
+
+    columns_to_drop = ['transaction_id'
+                      , 'tollboothid'
+                      , 'lane_type'
+                      , 'date'
+                      , 'day'
+                      , 'hour'
+                      , 'vehicle_speed_cat']
+
+    train_df = train_df.drop(columns=columns_to_drop)
+    test_df  = test_df.drop(columns=columns_to_drop)
+
+    # Split of X and Y
+    y_train = train_df['fraud_indicator']
+    y_test  = test_df['fraud_indicator'] 
+
+    X_train = train_df.drop(columns=["fraud_indicator", 'month', 'year'])
+    X_test  = test_df.drop(columns =["fraud_indicator"])
+
+    train_model(X_train = X_train,
+                y_train = y_train,
+                X_test  = X_test,
+                y_test  = y_test)

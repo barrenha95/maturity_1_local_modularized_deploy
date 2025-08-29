@@ -112,23 +112,23 @@ def test_save_and_load():
 
     store = FeatureStore()
     df1 = pd.DataFrame({
-        "transaction_id"        : [1],
-        "vehicle_type"          : [2.0],
-        "fastagid"              : [1],
-        "tollboothid"           : [1.0],
-        "lane_type"             : [0.0],
-        "vehicle_dimensions"    : [3.0],
-        "fraud_indicator"       : ['fraud'],
-        "date"                  : ['2025-08-25'],
-        "day"                   : ['25'],
-        "hour"                  : ['20'],
+        "transaction_id"        : [1],             # drop
+        "vehicle_type"          : [2.0],           
+        "fastagid"              : [1],             
+        "tollboothid"           : [1.0],           # drop
+        "lane_type"             : [0.0],           # drop
+        "vehicle_dimensions"    : [3.0],           
+        "fraud_indicator"       : ['fraud'],       # drop
+        "date"                  : ['2025-08-25'],  # drop
+        "day"                   : ['25'],          # drop
+        "hour"                  : ['20'],          # drop
         "transaction_amount_cat": [2],
         "discount"              : [1],
         "no_change"             : [0],
         "penalty"               : [0],
-        "vehicle_speed_cat"     : [1],
-        "month"                 : [1],
-        "year"                  : [2023]
+        "vehicle_speed_cat"     : [1],             # drop
+        "month"                 : [1],             # drop
+        "year"                  : [2023]           # drop 
     })
 
     try:
