@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7736976146d14ac0ba4e18b5aa4988ce/artifacts
+end_time: 1756814226805
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: 7736976146d14ac0ba4e18b5aa4988ce
+run_name: victorious-ape-726
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756814223282
+status: 3
+tags: []
+user_id: isabarrenha

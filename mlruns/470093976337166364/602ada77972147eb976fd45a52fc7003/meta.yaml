@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/602ada77972147eb976fd45a52fc7003/artifacts
+end_time: 1756814234035
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: 602ada77972147eb976fd45a52fc7003
+run_name: industrious-flea-16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756814230567
+status: 3
+tags: []
+user_id: isabarrenha

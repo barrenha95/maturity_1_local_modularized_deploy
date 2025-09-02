@@ -36,16 +36,12 @@ from mlflow.tracking import MlflowClient
 from sklearn import tree
 
 mlflow.set_tracking_uri('http://localhost:5000') # Set which mlflow server will use
-mlflow.set_experiment(experiment_id=470093976337166364) # Set Experiment
 
 # Loading the best model
 def model_load():
 
-
-    model_uri = f"runs:/{best_run.info.run_id}/model"
-    best_model = mlflow.pyfunc.load_model(model_uri)
-
-    return best_model
+    loaded_model = mlflow.sklearn.load_model(f"models:/BestDecisionTree/Production")
+    return loaded_model
 
 # Make the prediction
 def model_prediction(model, features):

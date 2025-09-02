@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/f956fa9618954ac587df5fffd259edfa/artifacts
+end_time: 1756814241290
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: f956fa9618954ac587df5fffd259edfa
+run_name: masked-crow-361
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756814237687
+status: 3
+tags: []
+user_id: isabarrenha

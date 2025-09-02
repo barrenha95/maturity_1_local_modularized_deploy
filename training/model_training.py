@@ -148,7 +148,15 @@ def train_model(X_train: pd.DataFrame
     model_uri = f"runs:/{best_run_id}/model"
     registered_model_name = "BestDecisionTree"
 
-    mlflow.register_model(model_uri=model_uri, name=registered_model_name)
+    result = mlflow.register_model(model_uri=model_uri, name=registered_model_name)
+
+    client.transition_model_version_stage(
+    name=registered_model_name,
+    version=result.version,   # result.version gives the new version number
+    stage="Production",
+    archive_existing_versions=True   # optional: archive old production versions
+    )
+
         
 # =================
 # Standalone Script
