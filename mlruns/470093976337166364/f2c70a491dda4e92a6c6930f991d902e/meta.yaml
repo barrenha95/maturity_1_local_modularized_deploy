@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/f2c70a491dda4e92a6c6930f991d902e/artifacts
+end_time: 1756812957407
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: f2c70a491dda4e92a6c6930f991d902e
+run_name: skillful-seal-677
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756812953776
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/dcbe18d4423a4675b154e562f6808cfa/artifacts
+end_time: 1756811993357
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: dcbe18d4423a4675b154e562f6808cfa
+run_name: abundant-mink-869
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811989719
+status: 3
+tags: []
+user_id: isabarrenha

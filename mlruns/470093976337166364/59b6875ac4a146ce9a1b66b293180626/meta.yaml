@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/59b6875ac4a146ce9a1b66b293180626/artifacts
+deleted_time: 1756811352985
+end_time: 1756810296292
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 59b6875ac4a146ce9a1b66b293180626
+run_name: abrasive-newt-575
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756810292625
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/53bf1d8c2e344543887538db90f7ef2b/artifacts
+deleted_time: 1756811353115
+end_time: 1756809290005
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 53bf1d8c2e344543887538db90f7ef2b
+run_name: orderly-goat-385
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809285846
+status: 3
+tags: []
+user_id: isabarrenha

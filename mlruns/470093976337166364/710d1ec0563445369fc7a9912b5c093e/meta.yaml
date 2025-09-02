@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/710d1ec0563445369fc7a9912b5c093e/artifacts
+deleted_time: 1756808924754
+end_time: 1756808554003
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 710d1ec0563445369fc7a9912b5c093e
+run_name: incongruous-gnu-424
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756808550267
+status: 3
+tags: []
+user_id: isabarrenha

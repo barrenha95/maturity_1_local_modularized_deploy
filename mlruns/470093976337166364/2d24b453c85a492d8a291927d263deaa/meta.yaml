@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/2d24b453c85a492d8a291927d263deaa/artifacts
+deleted_time: 1756811353075
+end_time: 1756809308949
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 2d24b453c85a492d8a291927d263deaa
+run_name: suave-elk-451
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809305192
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/5e84ef15d4924ee78399bed2fe80c487/artifacts
+deleted_time: 1756808924759
+end_time: 1756808550168
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 5e84ef15d4924ee78399bed2fe80c487
+run_name: grandiose-vole-310
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756808545740
+status: 3
+tags: []
+user_id: isabarrenha

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/5d5f34f96d154bbdb9debbdbcc88a588/artifacts
+deleted_time: 1756811353030
+end_time: 1756809331426
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 5d5f34f96d154bbdb9debbdbcc88a588
+run_name: luminous-midge-422
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809327675
+status: 3
+tags: []
+user_id: isabarrenha

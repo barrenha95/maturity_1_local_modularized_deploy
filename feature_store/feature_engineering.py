@@ -15,7 +15,7 @@ Usage:
     from feature_store.feature_engineering import load_data, clean_data, engineering
 
 - Run as a script for quick automated tests:
-    python feature_engineering.py
+    python -m feature_store.feature_engineering
 
 Functions:
 ----------

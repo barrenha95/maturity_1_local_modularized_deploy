@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/3d1ba6e7f87c402189a681fccb64a4da/artifacts
+end_time: 1756811963240
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: 3d1ba6e7f87c402189a681fccb64a4da
+run_name: rare-loon-330
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811959690
+status: 3
+tags: []
+user_id: isabarrenha

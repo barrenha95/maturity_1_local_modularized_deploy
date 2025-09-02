@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/b5807fb784fc48968aa6cdbf752985fe/artifacts
+deleted_time: 1756811352962
+end_time: 1756810325655
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: b5807fb784fc48968aa6cdbf752985fe
+run_name: persistent-colt-283
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756810322128
+status: 3
+tags: []
+user_id: isabarrenha

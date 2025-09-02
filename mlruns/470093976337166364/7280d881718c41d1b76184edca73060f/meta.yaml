@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7280d881718c41d1b76184edca73060f/artifacts
+end_time: 1756811985639
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: 7280d881718c41d1b76184edca73060f
+run_name: able-steed-88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811982067
+status: 3
+tags: []
+user_id: isabarrenha

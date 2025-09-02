@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/075dbd2bb84a47afb08f327a74232d6e/artifacts
+deleted_time: 1756808924783
+end_time: 1756808541799
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 075dbd2bb84a47afb08f327a74232d6e
+run_name: gentle-rat-525
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756808537879
+status: 3
+tags: []
+user_id: isabarrenha

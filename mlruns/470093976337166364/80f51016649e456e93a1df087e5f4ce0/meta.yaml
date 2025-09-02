@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/80f51016649e456e93a1df087e5f4ce0/artifacts
+deleted_time: 1756811353085
+end_time: 1756809301301
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 80f51016649e456e93a1df087e5f4ce0
+run_name: smiling-tern-399
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809297638
+status: 3
+tags: []
+user_id: isabarrenha

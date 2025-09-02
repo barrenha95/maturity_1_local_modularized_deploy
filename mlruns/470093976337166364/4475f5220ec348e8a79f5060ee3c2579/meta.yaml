@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/4475f5220ec348e8a79f5060ee3c2579/artifacts
+deleted_time: 1756811353091
+end_time: 1756809293743
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 4475f5220ec348e8a79f5060ee3c2579
+run_name: indecisive-jay-754
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809290100
+status: 3
+tags: []
+user_id: isabarrenha

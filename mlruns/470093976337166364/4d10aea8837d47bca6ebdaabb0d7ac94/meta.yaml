@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/4d10aea8837d47bca6ebdaabb0d7ac94/artifacts
+deleted_time: 1756811353044
+end_time: 1756809316296
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 4d10aea8837d47bca6ebdaabb0d7ac94
+run_name: clean-sponge-888
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809312701
+status: 3
+tags: []
+user_id: isabarrenha

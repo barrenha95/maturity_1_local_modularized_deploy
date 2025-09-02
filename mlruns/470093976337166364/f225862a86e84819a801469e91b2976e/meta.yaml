@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/f225862a86e84819a801469e91b2976e/artifacts
+end_time: 1756811967119
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: f225862a86e84819a801469e91b2976e
+run_name: charming-bee-616
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811963338
+status: 3
+tags: []
+user_id: isabarrenha

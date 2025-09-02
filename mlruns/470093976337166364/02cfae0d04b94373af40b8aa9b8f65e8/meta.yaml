@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/02cfae0d04b94373af40b8aa9b8f65e8/artifacts
+deleted_time: 1756811352960
+end_time: 1756810314537
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 02cfae0d04b94373af40b8aa9b8f65e8
+run_name: bold-cub-11
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756810311029
+status: 3
+tags: []
+user_id: isabarrenha

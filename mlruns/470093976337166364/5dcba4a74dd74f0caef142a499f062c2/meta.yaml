@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/5dcba4a74dd74f0caef142a499f062c2/artifacts
+deleted_time: 1756811353071
+end_time: 1756809312600
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 5dcba4a74dd74f0caef142a499f062c2
+run_name: rare-gnu-770
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756809309045
+status: 3
+tags: []
+user_id: isabarrenha

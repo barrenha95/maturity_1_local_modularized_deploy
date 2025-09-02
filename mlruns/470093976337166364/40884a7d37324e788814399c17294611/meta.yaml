@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/40884a7d37324e788814399c17294611/artifacts
+deleted_time: 1756811352983
+end_time: 1756810288826
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 40884a7d37324e788814399c17294611
+run_name: rare-pig-200
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756810284698
+status: 3
+tags: []
+user_id: isabarrenha

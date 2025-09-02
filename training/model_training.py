@@ -12,18 +12,18 @@ This module handles the process of training the model .
 Usage:
 ------
 - Import as a module:
-    from load_data import load_data, clean_data
+    from model_training import train_model
 
 - Run as a script for quick automated tests:
-    python load_data.py
+    python -m training.model_training
 
 Functions:
 ----------
-- load_feature_store(filepath: str) -> pd.DataFrame
-    Loads data from a CSV file.
+- plot_results(results_df: pd.DataFrame) -> plot.plt
+    Graphical plot of the metrics of the model.
 
-- train_model(df: pd.DataFrame) -> pd.DataFrame
-    Cleans missing values, duplicates, and basic formatting.
+- train_model(df: pd.DataFrame) -> None
+    Train the model saving artifacts into ML Flow.
 
 """
 
@@ -32,6 +32,8 @@ import numpy  as np
 import joblib
 import os
 import mlflow
+from mlflow.tracking import MlflowClient
+
 from itertools import product
 from feature_store.feature_engineering  import (load_data, clean_data, engineering)
 from feature_store.feature_store  import FeatureStore
@@ -42,6 +44,7 @@ from sklearn import tree
 from sklearn.model_selection import GridSearchCV
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 
 # =========================
 # ML Flow
@@ -89,7 +92,6 @@ def train_model(X_train: pd.DataFrame
               , y_test: pd.DataFrame) -> None:
     """Train a DecisionTreeClassifier with different hyperparameters,
     logging each run to MLflow."""
-
     
     # Define parameter grid
     param_grid = {
@@ -129,7 +131,24 @@ def train_model(X_train: pd.DataFrame
                 "f1"      : f1,
                 "roc_auc" : roc_auc
             })
+    
+        # used to interact with the mlflow client
+    client = MlflowClient()
 
+    # Getting the top accuracy run 
+    runs = client.search_runs(
+        experiment_ids=["470093976337166364"],
+        order_by=["metrics.accuracy DESC"],
+        max_results=1 
+    )
+
+    best_run_id = runs[0].info.run_id
+    best_model = mlflow.sklearn.load_model(f"runs:/{best_run_id}/model")
+
+    model_uri = f"runs:/{best_run_id}/model"
+    registered_model_name = "BestDecisionTree"
+
+    mlflow.register_model(model_uri=model_uri, name=registered_model_name)
         
 # =================
 # Standalone Script
@@ -232,7 +251,13 @@ if __name__ == "__main__":
     # Flip the target values
     y_test.loc[flip_indices] = 1 - y_test.loc[flip_indices]
 
+    # Applying scaler
+    scaler = joblib.load('deployment/scaler.pkl')
+    X_train = scaler.transform(X_train)
+    X_test = scaler.transform(X_test)
+
     train_model(X_train = X_train,
                 y_train = y_train,
                 X_test  = X_test,
                 y_test  = y_test)
+                

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/a4f950375b27486ca1a1d4f291bde9bd/artifacts
+end_time: 1756811970890
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: a4f950375b27486ca1a1d4f291bde9bd
+run_name: dazzling-bass-844
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756811967215
+status: 3
+tags: []
+user_id: isabarrenha

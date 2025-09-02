@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/7d8e9a8f475c487aba8d15d92068902b/artifacts
+deleted_time: 1756811352975
+end_time: 1756810307182
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: deleted
+run_id: 7d8e9a8f475c487aba8d15d92068902b
+run_name: capable-ox-484
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756810303640
+status: 3
+tags: []
+user_id: isabarrenha

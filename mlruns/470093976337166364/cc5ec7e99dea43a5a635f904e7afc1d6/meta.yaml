@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/470093976337166364/cc5ec7e99dea43a5a635f904e7afc1d6/artifacts
+end_time: 1756812938611
+entry_point_name: ''
+experiment_id: '470093976337166364'
+lifecycle_stage: active
+run_id: cc5ec7e99dea43a5a635f904e7afc1d6
+run_name: big-yak-942
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756812934947
+status: 3
+tags: []
+user_id: isabarrenha
