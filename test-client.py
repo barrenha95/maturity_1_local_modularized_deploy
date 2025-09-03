@@ -3,7 +3,6 @@ from datetime import datetime
 
 new_data = [
     {"Transaction_ID": 1
-    , "Timestamp": str(datetime.now())
     , "Vehicle_Type": "Bus"
     , "FastagID": "FTG-001-ABC-121"
     , "TollBoothID": "A-101"

@@ -41,10 +41,10 @@ As the project progresses, I will add the time spent on each task.
 3. Feature Engineering Module: Transform raw data into model-ready features. **2 hours and 14 minutes**
 4. Feature Store Module: Store processed features making it easier to manage and serve models. **2 hours and 2 minutes**
 5. Unit testing Module: Test each feature from the feature store. **1 hour and 45 minutes**
-6. Model Training Module: Train and save the model. **61 + 66 + 17 + 137 minutes**
-7. Evaluation Module: Model evaluation metrics. **23 + 12 minutes**
-8. Manual Inference Module: Load model and predict new data. **88 minutes**
-9. Experiment Tracking Module: Use ML Flow to artifacts registry. **16 + 13 minutes**
-10. Deployment Modules: API calling the inference script. **75 + 41 minutes**
+6. Model Training Module: Train and save the model. **4 hours and 41 minutes**
+7. Evaluation Module: Model evaluation metrics. **35 minutes**
+8. Manual Inference Module: Load model and predict new data. **1 hour and 28 minutes**
+9. Experiment Tracking Module: Use ML Flow to artifacts registry. **29 minutes**
+10. Deployment Modules: API calling the inference script. **2 hours and 26 minutes**
 11. Documentation: Write a README explaining how to run each script manually. Mention which files to edit or execute.
 12. Reflection & Publication Prep: Write a summary (for LinkedIn or blog): what this maturity level is, what you did, what’s missing, and the next steps.
