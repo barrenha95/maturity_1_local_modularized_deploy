@@ -15,7 +15,7 @@ Usage:
     from feature_store.new_data_check import check_data, apply_transformations, save_features
 
 - Run as a script for quick automated tests:
-    python new_data_check.py
+    python -m feature_store.new_data_check
 
 Functions:
 ----------

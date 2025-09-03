@@ -22,7 +22,7 @@ Usage:
     from feature_store.feature_store import save_offline, load_offline
 
 - Run as a script for quick automated tests:
-    python feature_store.py
+    python -m feature_store.feature_store
 
 Functions:
 ----------
