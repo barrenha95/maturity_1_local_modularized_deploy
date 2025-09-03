@@ -43,7 +43,7 @@ As the project progresses, I will add the time spent on each task.
 5. Unit testing Module: Test each feature from the feature store. **1 hour and 45 minutes**
 6. Model Training Module: Train and save the model. **61 + 66 + 17 + 137 minutes**
 7. Evaluation Module: Model evaluation metrics. **23 + 12 minutes**
-8. Manual Inference Module: Load model and predict new data. **??? minutes**
+8. Manual Inference Module: Load model and predict new data. **88 minutes**
 9. Experiment Tracking Module: Use ML Flow to artifacts registry. **16 + 13 minutes**
 10. Deployment Modules: Flask app and orchestration script. **75 + 41 minutes**
 11. Documentation: Write a README explaining how to run each script manually. Mention which files to edit or execute.

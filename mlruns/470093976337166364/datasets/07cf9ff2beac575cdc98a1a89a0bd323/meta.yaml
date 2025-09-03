@@ -1,8 +1,0 @@
-digest: b7e88ded
-name: dataset
-profile: '{"features_shape": [235, 7], "features_size": 1645, "features_nbytes": 13160}'
-schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
-  {\"dtype\": \"float64\", \"shape\": [-1, 7]}}]", "targets": null}}'
-source: '{"tags": {"mlflow.user": "isabarrenha", "mlflow.source.name": "/home/isabarrenha/Documents/Portfolio/maturity_1_local_modularized_deploy/training/model_training.py",
-  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "4461c15d3b169d169e31dee8c3362fe1e063601b"}}'
-source_type: code

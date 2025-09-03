@@ -55,8 +55,8 @@ import matplotlib.pyplot as plt
 # - mlflow library used to interact with the mlflow server
 # To run this script you must open an new terminal and run: mlflow server
 # The best way to run the mlflow server is on another machine like an vm or even docker
-mlflow.set_tracking_uri('http://localhost:5000') # Set which mlflow server will use
-mlflow.set_experiment(experiment_id=470093976337166364) # Set Experiment
+mlflow.set_tracking_uri('http://127.0.0.1:5000') # Set which mlflow server will use
+mlflow.set_experiment(experiment_id=1) # Set Experiment
 
 
 # =========================
@@ -137,7 +137,7 @@ def train_model(X_train: pd.DataFrame
 
     # Getting the top accuracy run 
     runs = client.search_runs(
-        experiment_ids=["470093976337166364"],
+        experiment_ids=["1"],
         order_by=["metrics.accuracy DESC"],
         max_results=1 
     )
